@@ -1,5 +1,7 @@
 import unittest
+import datetime
 import userInput
+
 
 class TestUserInput(unittest.TestCase):
     # initialize variables that are read in fron user Input in userInput.py file
@@ -39,6 +41,12 @@ class TestUserInput(unittest.TestCase):
 
 
     # start date: date type YYYY-MM-DD
+    def test_start_date_format(self):
+        start_date = userInput.begin_date
+        try:
+            datetime.datetime.strptime(start_date, "%Y-%m-%d")
+        except ValueError:
+            pass
 
     # end date: date type YYYY-MM-DD
 
