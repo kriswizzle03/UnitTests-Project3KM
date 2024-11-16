@@ -39,6 +39,7 @@ class TestUserInput(unittest.TestCase):
 
 
     # start date: date type YYYY-MM-DD
+    # if ValueError is raised then test passes since incorrect format caught 
     def test_start_date_format(self):
         start_date = userInput.begin_date
         try:
@@ -47,6 +48,7 @@ class TestUserInput(unittest.TestCase):
             pass
 
     # end date: date type YYYY-MM-DD
+    # if ValueError is raised then test passes since incorrect format caught 
     def test_end_date_format(self):
         end_date = userInput.end_date
         try:

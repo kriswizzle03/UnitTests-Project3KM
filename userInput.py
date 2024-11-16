@@ -4,7 +4,7 @@ from graph_generator import generate_graph
 import requests
 
 def get_stock_data_input():
-    # Enclosed entire input collection in a try block to catch unexpected errors, retuns none and outpust an error message.
+    # Enclosed entire input collection in a try block to catch unexpected errors, retuns none and outputs an error message.
 
         stock_symbol = input("Stock Data Visualizer Group 15 \n------------------------------------- \n\nEnter the stock symbol for the company you want data for: ").strip()
 
@@ -40,19 +40,15 @@ def get_stock_data_input():
                 print("\nInvalid date format. Please enter the date in YYYY-MM-DD format.")
         
         return stock_symbol, chart_type, time_series_function, begin_date, end_date
-'''
-    # Enclosed entire input collection in a try block to catch unexpected errors, retuns none and outpust an error message.
-    except Exception as e:
-        print(f"An unexpected error occurred while getting stock data input: {e}")
-        return None
-'''
+
 stock_symbol, chart_type, time_series_function, begin_date, end_date = get_stock_data_input()
 
+# Commenting out generating api url and graph process to isolate unit tests for user inputs
+'''
 time_series_name = convert_time_series(time_series_function)
 url = construct_url(BASE_URL, time_series_name, stock_symbol, INTERVAL, API_KEY)
 
-# Commenting out generating graph process to make unittests easier to run/fix
-'''
+
 try:
          # Get JSON data from API
         response = requests.get(url)
