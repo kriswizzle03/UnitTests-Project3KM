@@ -20,6 +20,9 @@ class TestUserInput(unittest.TestCase):
         self.assertTrue(1 <= len(symbol) <= 7, f"Stock symbol '{symbol}' is not between 1 and 7 characters.")
 
     # chart type: 1 numeric character, 1 or 2
+    def test_chart_type_num(self):
+        chart_type = userInput.chart_type
+        self.assertTrue(chart_type == "1" or chart_type == "2", f"The selection {chart_type} for chart_type is not 1 or 2.")
 
     # time series: 1 numeric character, 1 - 4
 
