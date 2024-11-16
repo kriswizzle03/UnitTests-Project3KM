@@ -4,9 +4,7 @@ import userInput
 
 
 class TestUserInput(unittest.TestCase):
-    # initialize variables that are read in fron user Input in userInput.py file
-    
-
+    # Tests using real user input
     # symbol: capitalized, 1-7 alpha characters
     def test_symbol_capitalized(self):
         symbol = userInput.stock_symbol
@@ -49,6 +47,12 @@ class TestUserInput(unittest.TestCase):
             pass
 
     # end date: date type YYYY-MM-DD
+    def test_end_date_format(self):
+        end_date = userInput.end_date
+        try:
+            datetime.datetime.strptime(end_date, "%Y-%m-%d")
+        except ValueError:
+            pass
 
 
 
